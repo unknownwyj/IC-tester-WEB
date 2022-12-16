@@ -88,8 +88,8 @@ button {
       font-size: 16px;
       font-weight: 500;
       cursor: pointer;
-      float: left;
-      margin: 0 0 0 10px;
+      margin-bottom: 0.2%;
+      margin-left: 0.3%;
     }
     
     .button:hover {
@@ -114,9 +114,9 @@ button {
       background: rgba(0, 0, 0, 0.08);
     }
 .rectangle {
-  border: 5px solid rgba(18, 157, 212, 0.842);
+  border: 2px solid rgba(18, 157, 212, 0.842);
   border-radius: 10px;
-  padding: 24px;
+  padding: 5px;
   box-sizing: content-box;
   overflow: hidden;
   margin-top: 10px;
