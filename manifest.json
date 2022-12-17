@@ -3,7 +3,7 @@
   "lang": "en",
   "display": "standalone",
   "orientation": "any",
-  "start_url": "/?launch=pwa",
+  "start_url": "/IC-tester-WEB/index.html",
   "scope": "./",
   "name": "IC Tester Web Terminal",
   "short_name": "IC Tester",
