@@ -2,7 +2,7 @@
   "dir": "ltr",
   "lang": "en",
   "display": "standalone",
-  "orientation": "any",
+  "orientation": "portrait-primary",
   "start_url": "./",
   "scope": ".",
   "name": "IC Tester Web Terminal",
@@ -56,5 +56,12 @@
       "sizes": "512x512",
       "type": "image/png"
     }
+  ],
+  "display_override": [
+    "standalone"
+  ],
+  "prefer_related_applications": false,
+  "categories": [
+    "productivity"
   ]
 }
