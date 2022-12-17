@@ -14,10 +14,13 @@ workbox.routing.registerRoute(
 );
 workbox.precaching.precacheAndRoute([
   {url: '/', revision: null},
+  {url: '/IC-tester-WEB/icons/', revision: null},
   {url: '/IC-tester-WEB/icons/16pinIC.svg', revision: null},
   {url: '/IC-tester-WEB/index.html', revision: null},
   {url: '/IC-tester-WEB/', revision: null},
   {url: '/IC-tester-WEB/css/styles.css', revision: null},
+  {url: '/IC-tester-WEB/js/main.js', revision: null},
+  {url: '/IC-tester-WEB/css/', revision: null},
   {url: '/IC-tester-WEB/js/main.js', revision: null},
   {url: '/IC-tester-WEB/js/BluetoothTerminal.js', revision: null}
 ]);
@@ -40,9 +43,12 @@ self.addEventListener('install', function(event) {
       return cache.addAll([
         "/",
         "/IC-tester-WEB/",
+        "/IC-tester-WEB/icons",
         "/IC-tester-WEB/icons/16pinIC.svg",
         "/IC-tester-WEB/index.html",
+        "/IC-tester-WEB/css/",
         "/IC-tester-WEB/css/styles.css",
+        "/IC-tester-WEB/js/",
         "/IC-tester-WEB/js/main.js",
         "/IC-tester-WEB/js/BluetoothTerminal.js"
        ]);
