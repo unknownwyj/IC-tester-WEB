@@ -18,6 +18,8 @@ workbox.routing.registerRoute(
 precacheAndRoute([
   {url: 'https://unknownwyj.github.io/IC-tester-WEB/icons/16pinIC.svg', revision: null},
   {url: 'https://unknownwyj.github.io/IC-tester-WEB/index.html', revision: null},
+  {url: 'https://unknownwyj.github.io/IC-tester-WEB/*', revision: null},
+  {url: 'https://unknownwyj.github.io/IC-tester-WEB/', revision: null},
   {url: 'https://unknownwyj.github.io/IC-tester-WEB/css/style.css', revision: null},
   {url: 'https://unknownwyj.github.io/IC-tester-WEB/js/main.js', revision: null},
   {url: 'https://unknownwyj.github.io/IC-tester-WEB/js/BluetoothTerminal.js', revision: null}
