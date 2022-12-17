@@ -3,7 +3,7 @@
   "lang": "en",
   "display": "standalone",
   "orientation": "any",
-  "start_url": "/",
+  "start_url": "./",
   "scope": ".",
   "name": "IC Tester Web Terminal",
   "short_name": "IC Tester",

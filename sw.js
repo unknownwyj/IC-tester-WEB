@@ -1,9 +1,6 @@
 // This is the "Offline copy of pages" service worker
-
 const CACHE = "pwabuilder-offline";
-import {precacheAndRoute} from 'workbox-precaching';
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
-
 self.addEventListener("message", (event) => {
   if (event.data && event.data.type === "SKIP_WAITING") {
     self.skipWaiting();
@@ -15,14 +12,13 @@ workbox.routing.registerRoute(
   new workbox.strategies.NetworkFirst()
   
 );
-precacheAndRoute([
-  {url: '/.*', revision: null},
-  {url: '/.icons/16pinIC.svg', revision: null},
-  {url: '/.index.html', revision: null},
-  {url: '/.', revision: null},
-  {url: '/.css/style.css', revision: null},
-  {url: '/.js/main.js', revision: null},
-  {url: '/.js/BluetoothTerminal.js', revision: null}
+workbox.precaching.precacheAndRoute([
+  {url: '/icons/16pinIC.svg', revision: null},
+  {url: '/index.html', revision: null},
+  {url: '/', revision: null},
+  {url: '/css/styles.css', revision: null},
+  {url: '/js/main.js', revision: null},
+  {url: '/js/BluetoothTerminal.js', revision: null}
 ]);
 self.addEventListener('fetch', function(event) {
   event.respondWith(async function() {
@@ -41,12 +37,11 @@ self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open('cache').then(function(cache) {
       return cache.addAll([
-        "./*",
-        "./icons/16pinIC.svg",
-        "./index.html",
-        "./css/style.css",
-        "./js/main.js",
-        "./js/BluetoothTerminal.js"
+        "/icons/16pinIC.svg",
+        "/index.html",
+        "/css/styles.css",
+        "/js/main.js",
+        "/js/BluetoothTerminal.js"
        ]);
     })
    );
