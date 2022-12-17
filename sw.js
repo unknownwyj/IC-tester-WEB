@@ -11,16 +11,16 @@ self.addEventListener("message", (event) => {
 });
 
 workbox.routing.registerRoute(
-  new RegExp('/.*'),
+  new RegExp('https://unknownwyj.github.io/IC-tester-WEB/*'),
   new workbox.strategies.NetworkFirst()
   
 );
 precacheAndRoute([
-  {url: '/icons/16pinIC.svg', revision: null},
-  {url: '/index.html', revision: null},
-  {url: '/css/style.css', revision: null},
-  {url: '/js/main.js', revision: null},
-  {url: '/js/BluetoothTerminal.js', revision: null}
+  {url: 'https://unknownwyj.github.io/IC-tester-WEB/icons/16pinIC.svg', revision: null},
+  {url: 'https://unknownwyj.github.io/IC-tester-WEB/index.html', revision: null},
+  {url: 'https://unknownwyj.github.io/IC-tester-WEB/css/style.css', revision: null},
+  {url: 'https://unknownwyj.github.io/IC-tester-WEB/js/main.js', revision: null},
+  {url: 'https://unknownwyj.github.io/IC-tester-WEB/js/BluetoothTerminal.js', revision: null}
 ]);
 //self.addEventListener('fetch', function(event) {
 //  event.respondWith(async function() {
