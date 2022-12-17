@@ -29,13 +29,12 @@ self.addEventListener('fetch', function(event) {
       }
     }());
 });
-
 self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open('cache').then(function(cache) {
       return cache.addAll([
         "./*",
-        "./app/icons/*",
+        "./app/icons/16pinIC.svg",
         "./app/index.html",
         "./app/style.css",
         "./app/app.js"
