@@ -47,7 +47,6 @@
             </div>
             
         </div>
-        <div> </div>
         <button id="Start-AutoTest"type="button" class="button">
             <span class="button__text"> Auto Test </span>
             <span class="button__icon">
@@ -66,6 +65,7 @@
                   </svg>
             </span>
         </button>
+        <div style="clear:both;"></div>
 </div>
     <div class="rectangle"id="manualtestsettings">
         <div class="name">
@@ -89,16 +89,18 @@
             </select>
         </div>
     </div>
-    <div class="rectangle"id="testing" style="display:block;">
+    <div class="rectangle"id="testing" style="display:none;">
         <div class="name">
             <h2>Testing for IC</h2>
-            <img id="icimage" src="icons/18pinIC.svg" alt="IC-Tester">
+            <canvas id="icimage" width="340" height="200"></canvas>
         </div>
     </div>
     <div class="rectangle"id="result" style="display:none;">
         <div class="name">
             <h2>Test Result</h2>
             <label id="resultlabel">Result:</label>
+            <br />
+            <label class="wow" id="resultGate"></label>
         </div>
     </div>
     <div id="Terminal" class="app" style="display: none;">

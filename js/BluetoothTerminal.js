@@ -295,7 +295,6 @@
     }
 
     this._log('Connecting to GATT server...');
-    this._log('I AM there');
     return device.gatt.connect().then().
         then((server) => {
           this._log('GATT server connected', 'Getting service...');
