@@ -14,7 +14,7 @@ workbox.routing.registerRoute(
 );
 workbox.precaching.precacheAndRoute([
   {url: '/', revision: null},
-  {url: '/IC-tester-WEB/icons/', revision: null},
+  {url: '/IC-tester-WEB/icons', revision: null},
   {url: '/IC-tester-WEB/icons/16pinIC.svg', revision: null},
   {url: '/IC-tester-WEB/index.html', revision: null},
   {url: '/IC-tester-WEB/', revision: null},
