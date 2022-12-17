@@ -130,3 +130,6 @@ button {
 .wow{
   white-space: pre-wrap;
 }
+.rotate {
+  transform: rotate(270deg);
+}

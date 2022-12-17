@@ -12,6 +12,7 @@ const testingbox = document.getElementById('testing');
 const resultbox = document.getElementById('result');
 const resultlabel = document.getElementById('resultlabel');
 const resultGate = document.getElementById('resultGate');
+var ICsvg = document.getElementById("ICsvg")
 // Helpers.
 const defaultDeviceName = 'Terminal';
 const terminalAutoScrollingLimit = terminalContainer.offsetHeight / 2;
@@ -34,20 +35,32 @@ const logToTerminal = (message, type = '') => {
   }
   
 };
+var oldchild;
 function addTextToImage(imagePath, text) {
-  var circle_canvas = document.getElementById("icimage");
-  var context = circle_canvas.getContext("2d");
-  // Draw Image function
-  var img = new Image();
-  img.src = imagePath;
-  img.onload = function () {
-      context.drawImage(img, 70, 0);
-      context.lineWidth = 1;
-      context.fillStyle = "#000000";
-      context.lineStyle = "#ffff00";
-      context.font = "35px Roboto Mono";
-      context.fillText(text, 140, 110);
-  };
+  //set the image
+  if(oldchild != null)
+  ICsvg.removeChild(oldchild);
+  var myTextElement = document.createElementNS("http://www.w3.org/2000/svg", "text");
+  var element = document.createElementNS("http://www.w3.org/2000/svg","svg");
+  var image = document.createElementNS("http://www.w3.org/2000/svg","image");
+  image.setAttributeNS("http://www.w3.org/1999/xlink","href",imagePath);
+  image.setAttribute("style","transform-origin: 50% 50%;width:200px;height:220px;transform: rotate(-90deg);")
+  image.setAttribute("width", "350");
+  image.setAttribute("height", "160");
+  image.setAttribute("x", "60");
+  image.setAttribute("y", "-40");
+  element.appendChild(image);
+  //set the text
+  var myText = document.createTextNode(text);
+  myTextElement.setAttribute("x", "105");
+  myTextElement.setAttribute("y", "75");
+  myTextElement.setAttribute("fill", "black");
+  myTextElement.setAttribute("font-family", "Roboto Mono");
+  myTextElement.setAttribute("font-size", "30");
+  myTextElement.appendChild(myText);
+  element.appendChild(myTextElement); 
+  oldchild = element;
+  ICsvg.appendChild(element);  
 }
 const readfromterminal = (message, type = '') => {
   const firstChar = message.toString().charAt(0);
