@@ -8,7 +8,7 @@ self.addEventListener("message", (event) => {
 });
 
 workbox.routing.registerRoute(
-  new RegExp('/.*'),
+  new RegExp('/IC-tester-WEB/.*'),
   new workbox.strategies.NetworkFirst()
   
 );
