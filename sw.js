@@ -16,39 +16,38 @@ workbox.routing.registerRoute(
   
 );
 precacheAndRoute([
-  {url: 'https://unknownwyj.github.io/*', revision: null},
-  {url: 'https://unknownwyj.github.io/IC-tester-WEB/icons/16pinIC.svg', revision: null},
-  {url: 'https://unknownwyj.github.io/IC-tester-WEB/index.html', revision: null},
-  {url: 'https://unknownwyj.github.io/IC-tester-WEB/*', revision: null},
-  {url: 'https://unknownwyj.github.io/IC-tester-WEB/', revision: null},
-  {url: 'https://unknownwyj.github.io/IC-tester-WEB/css/style.css', revision: null},
-  {url: 'https://unknownwyj.github.io/IC-tester-WEB/js/main.js', revision: null},
-  {url: 'https://unknownwyj.github.io/IC-tester-WEB/js/BluetoothTerminal.js', revision: null}
+  {url: '/*', revision: null},
+  {url: '/icons/16pinIC.svg', revision: null},
+  {url: '/index.html', revision: null},
+  {url: '/', revision: null},
+  {url: '/css/style.css', revision: null},
+  {url: '/js/main.js', revision: null},
+  {url: '/js/BluetoothTerminal.js', revision: null}
 ]);
-//self.addEventListener('fetch', function(event) {
-//  event.respondWith(async function() {
-//     try{
-//       var res = await fetch(event.request);
-//       var cache = await caches.open('cache');
-//       cache.put(event.request.url, res.clone());
-//       return res;
-//     }
-//     catch(error){
-//       return caches.match(event.request);
-//      }
-//    }());
-//});
-//self.addEventListener('install', function(event) {
-//  event.waitUntil(
-//    caches.open('cache').then(function(cache) {
-//      return cache.addAll([
-//        "./*",
-//        "./icons/16pinIC.svg",
-//        "./index.html",
-//        "./css/style.css",
-//        "./js/main.js",
-//        "./js/BluetoothTerminal.js"
-//       ]);
-//    })
-//   );
-//});
+self.addEventListener('fetch', function(event) {
+  event.respondWith(async function() {
+     try{
+       var res = await fetch(event.request);
+       var cache = await caches.open('cache');
+       cache.put(event.request.url, res.clone());
+       return res;
+     }
+     catch(error){
+       return caches.match(event.request);
+      }
+    }());
+});
+self.addEventListener('install', function(event) {
+  event.waitUntil(
+    caches.open('cache').then(function(cache) {
+      return cache.addAll([
+        "./*",
+        "./icons/16pinIC.svg",
+        "./index.html",
+        "./css/style.css",
+        "./js/main.js",
+        "./js/BluetoothTerminal.js"
+       ]);
+    })
+   );
+});
