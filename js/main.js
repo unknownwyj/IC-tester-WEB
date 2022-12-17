@@ -7,11 +7,13 @@ const sendForm = document.getElementById('send-form');
 const inputField = document.getElementById('input');
 const textout = document.getElementById('sstatus');
 const startautotest = document.getElementById('Start-AutoTest');
+const startmanualtest = document.getElementById('Manual-Test');
 const Terminaldiv = document.getElementById('Terminal');
 const testingbox = document.getElementById('testing');
 const resultbox = document.getElementById('result');
 const resultlabel = document.getElementById('resultlabel');
 const resultGate = document.getElementById('resultGate');
+const ICselected = document.getElementById('ICselected');
 var ICsvg = document.getElementById("ICsvg")
 // Helpers.
 const defaultDeviceName = 'Terminal';
@@ -66,7 +68,7 @@ const readfromterminal = (message, type = '') => {
   const firstChar = message.toString().charAt(0);
   if(firstChar == '*'){
     const data = message.toString().slice(1);
-    if(data == "Autotest"){
+    if(data == "Autotest" || data == "ManualTest"){
       resultbox.style.display = "none";
       testingbox.style.display = "block";
     }
@@ -165,6 +167,16 @@ connectButton.addEventListener('click', () => {
         deviceNameLabel.textContent = terminal.getDeviceName() ?
             terminal.getDeviceName() : defaultDeviceName;
       });
+});
+startmanualtest.addEventListener('click', () => {
+  if(isConnected){
+    var value = ICselected.value.toString();
+    send('M'+value);
+  resultbox.style.display = "none";
+  }
+  else{
+    alert("Please connect to a device first");
+  }
 });
 startautotest.addEventListener('click', () => {
   if(isConnected){
