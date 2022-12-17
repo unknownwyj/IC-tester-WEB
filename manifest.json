@@ -6,7 +6,7 @@
   "start_url": "./",
   "scope": "./",
   "name": "IC Tester Web Terminal",
-  "short_name": "Web Terminal",
+  "short_name": "IC Tester",
   "description": "Progressive Web Application for communicating with IC-Tester",
   "theme_color": "#2196f3",
   "background_color": "#ffffff",
