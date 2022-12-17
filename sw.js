@@ -11,18 +11,18 @@ self.addEventListener("message", (event) => {
 });
 
 workbox.routing.registerRoute(
-  new RegExp('https://unknownwyj.github.io/*'),
+  new RegExp('./*'),
   new workbox.strategies.NetworkFirst()
   
 );
 precacheAndRoute([
-  {url: '/*', revision: null},
-  {url: '/icons/16pinIC.svg', revision: null},
-  {url: '/index.html', revision: null},
-  {url: '/', revision: null},
-  {url: '/css/style.css', revision: null},
-  {url: '/js/main.js', revision: null},
-  {url: '/js/BluetoothTerminal.js', revision: null}
+  {url: './*', revision: null},
+  {url: './icons/16pinIC.svg', revision: null},
+  {url: './index.html', revision: null},
+  {url: './', revision: null},
+  {url: './css/style.css', revision: null},
+  {url: './js/main.js', revision: null},
+  {url: './js/BluetoothTerminal.js', revision: null}
 ]);
 self.addEventListener('fetch', function(event) {
   event.respondWith(async function() {
