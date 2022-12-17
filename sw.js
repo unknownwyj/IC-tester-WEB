@@ -48,6 +48,13 @@ self.addEventListener('periodicsync', event => {
      ]);
   }));
 });
+self.addEventListener('sync', event => {
+  event.waitUntil(caches.open('cache').then(function(cache) {
+    return cache.addAll([
+      "/IC-tester-WEB/index.html",
+     ]);
+  }));
+});
 self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open('cache').then(function(cache) {
