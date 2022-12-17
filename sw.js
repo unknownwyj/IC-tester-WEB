@@ -13,6 +13,7 @@ workbox.routing.registerRoute(
   
 );
 workbox.precaching.precacheAndRoute([
+  {url: '/', revision: null},
   {url: '/IC-tester-WEB/icons/16pinIC.svg', revision: null},
   {url: '/IC-tester-WEB/index.html', revision: null},
   {url: '/IC-tester-WEB/', revision: null},
@@ -37,6 +38,8 @@ self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open('cache').then(function(cache) {
       return cache.addAll([
+        "/",
+        "/IC-tester-WEB/",
         "/IC-tester-WEB/icons/16pinIC.svg",
         "/IC-tester-WEB/index.html",
         "/IC-tester-WEB/css/styles.css",
