@@ -34,7 +34,8 @@ self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open('cache').then(function(cache) {
       return cache.addAll([
-        "*",
+        "./*",
+        "./app/icons/*",
         "./app/index.html",
         "./app/style.css",
         "./app/app.js"
