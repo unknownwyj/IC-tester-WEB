@@ -11,11 +11,12 @@ self.addEventListener("message", (event) => {
 });
 
 workbox.routing.registerRoute(
-  new RegExp('https://unknownwyj.github.io/IC-tester-WEB/*'),
+  new RegExp('https://unknownwyj.github.io/*'),
   new workbox.strategies.NetworkFirst()
   
 );
 precacheAndRoute([
+  {url: 'https://unknownwyj.github.io/*', revision: null},
   {url: 'https://unknownwyj.github.io/IC-tester-WEB/icons/16pinIC.svg', revision: null},
   {url: 'https://unknownwyj.github.io/IC-tester-WEB/index.html', revision: null},
   {url: 'https://unknownwyj.github.io/IC-tester-WEB/*', revision: null},
